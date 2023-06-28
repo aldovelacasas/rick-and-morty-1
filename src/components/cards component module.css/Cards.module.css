@@ -1,0 +1,11 @@
+.cardList {
+    /* max-width: 80vw; */
+    margin-bottom: 30px;
+    padding:40px;
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr 1fr;
+    grid-gap: 40px;
+    margin: auto;
+    flex-wrap:wrap;
+    justify-content: space-around
+}

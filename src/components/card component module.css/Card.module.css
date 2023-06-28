@@ -1,0 +1,47 @@
+.container {
+    background-color: rgb(108, 24, 235);
+     width: fit-content; 
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px 0px rgba(171, 165, 196, 0.75);
+    text-shadow: 6px 4px 7px rgba(241, 241, 94, 0.6);
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .container:hover {
+    /* Agrega los estilos que deseas para el hover */
+    /* Por ejemplo: */
+    background-color: rgb(9, 47, 175);
+    color: white;
+    /* ... otros estilos */
+  }
+  
+
+.closeButton{
+    border: 0px;
+    background-color: rgb(111, 14, 230);
+    width: fit-content;
+    height: fit-content;
+    border-radius: 15px;
+    transition: 0.5s;
+    color: rgb(15, 134, 239);
+
+}
+.closeButton:hover{
+    box-shadow: 10px 10px 5px 0px rgba(16, 16, 16, 0.75);
+}
+.closeButton button{
+    background-color: blueviolet;
+    color: azure;
+}
+.dataContainer{
+    text-align: center;
+    padding: auto;
+}
+.dataContainer h2{
+    margin: 2px;
+    font-size: 20px;
+    color: rgb(19, 17, 36);
+}
