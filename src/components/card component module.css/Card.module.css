@@ -3,8 +3,8 @@
      width: fit-content; 
     padding: 1em;
     border-radius: 10px;
-    box-shadow: 10px 10px 5px 0px rgba(248, 1, 1, 0.75);
-    text-shadow: 6px 4px 7px rgba(236, 7, 7, 0.6);
+    box-shadow: 10px 10px 5px 0px rgba(226, 241, 7, 0.75);
+    text-shadow: 6px 4px 7px rgba(186, 236, 7, 0.779);
     display: flex;
     flex-direction: column;
     /* background-image: url(https://www.kolpaper.com/wp-content/uploads/2020/03/rick-and-morty-4k-wallpaper-scaled.jpg) */
@@ -28,43 +28,48 @@
   
     
 }
+
+
+.name{
+    font-size: 0.8em;
+    position: relative;
+    bottom: 10vh;
+    left: 1vw;
+    background-color: rgb(200, 233, 205);
+    width: 10vw;
+}
   
   
 
 .closeButton{
     border: 0px;
     background-color: rgb(111, 14, 230);
-    width: fit-content;
-    height: fit-content;
+    width: 30px;
+    height: 30px;
     border-radius: 15px;
     transition: 0.5s;
     color: rgb(15, 134, 239);
-
-
-    
-
-
-    
-
 }
 .closeButton:hover{
-    box-shadow: 10px 10px 5px 0px rgba(16, 16, 16, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(238, 235, 235, 0.75);
 
     
 }
-.closeButton button{
-    background-color: rgba(1, 248, 67, 0.612);
+.buttonPosition{
+     /* background-color: rgba(1, 248, 67, 0.612);  */
     color: azure;
-
-    font-size: 24px; /* Ajusta el tamaño de la fuente */
-  width: 40px; /* Ajusta el ancho del botón */
-  height: 40px; /* Ajusta la altura del botón */
+     
+    font-size: 24px;   
+  width: 40px;   
+  height: 40px;
+  top: 2px;
+  left: 2px;   
 }
 .dataContainer{
     text-align: center;
     padding: auto;
-   
 }
+
 .dataContainer h2{
     margin: 2px;
     font-size: 25px;
