@@ -6,13 +6,14 @@ import Detail from './components/Detail components/Detail_component';
 import { useState } from 'react'
 import axios from 'axios';
 import {Routes, Route, } from 'react-router-dom'
-
-
+import Form from './components/Form components/Form';
+import {useLocation} from "react-router-dom"
 
 
 
 function App() {
-
+    const location = useLocation();
+    console.log(location);
    const [characters, setCharacters] = useState([]);
 
    const onSearch=(id)=> {
@@ -47,7 +48,8 @@ function App() {
            <Route path='/home' element={ <Cards characters={characters}  onClose={onClose}/>} />
            <Route path='/about' element={<About/>} />
            <Route path='/detail/:id' element={<Detail/>} />
-
+           <Route path="/" element={<Form/>} />
+           
          </Routes>
      
          
