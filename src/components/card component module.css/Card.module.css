@@ -1,96 +1,118 @@
 .container {
-    background-color: rgba(74, 15, 236, 0.598);
-     width: fit-content; 
-    padding: 1em;
-    border-radius: 10px;
-    box-shadow: 10px 10px 5px 0px rgba(226, 241, 7, 0.75);
-    text-shadow: 6px 4px 7px rgba(186, 236, 7, 0.779);
-    display: flex;
-    flex-direction: column;
-    /* background-image: url(https://www.kolpaper.com/wp-content/uploads/2020/03/rick-and-morty-4k-wallpaper-scaled.jpg) */
-
-    
-
+  /* Estilos del contenedor de la carta */
+  background-color: rgba(74, 15, 236, 0.598);
+  width: fit-content;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 0px rgb(29, 30, 28);
+  text-shadow: 6px 4px 7px rgba(186, 236, 7, 0.779);
+  display: flex;
+  flex-direction: column;
+  
 }
-    
-  
-  
-  .container:hover {
-   background-image: url(https://www.gamespot.com/a/uploads/screen_kubrick/1562/15626911/3287778-deck.jpg);
- 
- 
-   transform: rotate(360deg);
-   transition: transform 0.5s;
-  }
+
+.container:hover {
+  /* Estilos al pasar el puntero sobre la carta */
+  background-image: url(https://www.gamespot.com/a/uploads/screen_kubrick/1562/15626911/3287778-deck.jpg);
+  transform: rotate(360deg);
+  transition: transform 0.5s;
+}
 
 .container img {
-    transition: transform 0.5s;
-  
-    
+  /* Estilos de la imagen dentro de la carta */
+  transition: transform 0.5s;
+  width: 95%; /* Ajusta el tamaño de la imagen */
+  height: auto; /* Permite que la altura se ajuste proporcionalmente al ancho */
+  /* box-shadow: inset 0 0 100px 10px rgba(11, 6, 1, 0.82); Sombra alrededor de la imagen */
+  padding: 0px; /* Espaciado interno del borde alrededor de la imagen */
+  border: 10px solid rgb(26, 1, 1);
+  border-radius: 5px; /* Borde redondeado */
 }
 
-
-.name{
-    font-size: 0.8em;
-    position: relative;
-    bottom: 10vh;
-    left: 1vw;
-    background-color: rgb(200, 233, 205);
-    width: 10vw;
+.name {
+  /* Estilos del nombre en la carta */
+  font-size: 0.8em;
+  position: relative;
+  bottom: 1vh;
+  left: +1vw;
+  background-color: rgba(22, 208, 115, 0);
+  width: 14vw;
+  text-align:center;
 }
-  
-  
 
-.closeButton{
-    border: 0px;
-    background-color: rgb(111, 14, 230);
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    transition: 0.5s;
-    color: rgb(15, 134, 239);
+.closeButton {
+  /* Estilos del botón de cierre */
+  border: 0px;
+  background-color: rgb(111, 14, 230);
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  transition: 0.5s;
+  color: rgb(255, 255, 255);
 }
-.closeButton:hover{
-    box-shadow: 10px 10px 5px 0px rgba(238, 235, 235, 0.75);
 
-    
+.closeButton:hover {
+  /* Estilos al pasar el puntero sobre el botón de cierre */
+  box-shadow: 10px 10px 5px 0px rgba(255, 255, 255, 0.945);
 }
-.buttonPosition{
-     /* background-color: rgba(1, 248, 67, 0.612);  */
-    color: azure;
-     
-    font-size: 24px;   
-  width: 40px;   
+
+.buttonPosition {
+  /* Estilos de posición del botón de cierre */
+  color: azure;
+  font-size: 24px;
+  width: 40px;
   height: 40px;
   top: 2px;
-  left: 2px;   
-}
-.dataContainer{
-    text-align: center;
-    padding: auto;
+  left: 2px;
 }
 
-.dataContainer h2{
-    margin: 2px;
-    font-size: 25px;
-    color: rgb(19, 20, 19);
+.dataContainer {
+  /* Estilos del contenedor de datos */
+  text-align:left;
+  padding: 0em;
+}
+
+.dataContainer h2 {
+  /* Estilos de los datos en la carta */
+  /* margin: 2px;
+  font-size: 25px;
+  color: rgb(19, 20, 19); */
+
+  margin: 20px 0;
+  font-size: 25px;
+  font-weight: bold;
+  color: #afda07;
+}
+
+.cardData {
+  font-size: 20;
+  position: relative;
+  bottom: 1vh;
+  left: +1vw;
+  background-color: rgba(245, 249, 246, 0);
+  width: 14vw;
+}
+.cardData p {
+  font-family: Arial, sans-serif; /* Cambia el diseño de letra a Arial o una fuente sans-serif */
+  font-size: 20px; /* Opcional: ajusta el tamaño de la fuente */
+  font-weight:bold; /* Opcional: ajusta el grosor de la fuente */
+  color: #0c0c0c; /* Opcional: ajusta el color de la fuente */
 }
 
 
 
+/* .container { */
+  /* Estilos previos */
+  /* position: relative; */
 
-  /*.container {
-    /* Estilos previos 
-    position: relative;
-  }
-  
-  .container:hover {
-    transform: rotate(360deg);        GIRO DE CARTA
-    transition: transform 0.5s;
-  }
-  
-  .container img {
-    /* Estilos previos *
-    transition: transform 0.5s;
-  }*/
-  
+
+/* .container:hover { */
+  /* Estilos previos */
+  /* transform: rotate(360deg); */
+  /* transition: transform 0.5s; */
+
+
+/* .container img { */
+  /* Estilos previos */
+  /* transition: transform 0.5s; */
+

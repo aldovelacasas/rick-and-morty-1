@@ -1,11 +1,14 @@
 .cardList {
-    /* max-width: 80vw; */
-    margin-bottom: 30px;
-    padding:40px;
-    display: grid;
-    grid-template-columns:  1fr 1fr 1fr 1fr;
-    grid-gap: 40px;
-    margin: auto;
-    flex-wrap:wrap;
-    justify-content: space-around
-}
+    /* Estilos de la lista de cartas */
+    /* max-width: 80vw; */ /* Comentario: Anchura máxima de la lista de cartas */
+    margin-bottom: 30px; /* Comentario: Margen inferior de la lista de cartas */
+    padding: 40px; /* Comentario: Espaciado interno de la lista de cartas */
+    display: grid; /* Comentario: Mostrar elementos como una cuadrícula */
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Comentario: Definir 4 columnas de tamaño igual en la cuadrícula */
+    grid-gap: 40px; /* Comentario: Espaciado entre las celdas de la cuadrícula */
+    margin: auto; /* Comentario: Centrar la lista de cartas horizontalmente */
+    flex-wrap: wrap; /* Comentario: Envolver los elementos cuando no caben en una sola fila */
+    justify-content: space-around; /* Comentario: Distribuir el espacio sobrante entre las columnas */
+    grid-template-columns: 0.8fr 0.8fr 0.8fr 0.8fr; /* Ajuste: Reducir el tamaño de las columnas */
+  }
+ 

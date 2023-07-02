@@ -1,0 +1,62 @@
+.detail-container {
+  display: flex; /* Establece el contenedor como un contenedor flex */
+  justify-content: space-between; /* Distribuye los elementos internos con espacio entre ellos */
+  align-items: center; /* Centra verticalmente los elementos internos */
+  padding: 0px; /* Establece el relleno interno del contenedor a 0 píxeles */
+ 
+}
+.detail-name {
+  display: inline-block; /* Hace que el elemento se muestre como un bloque en línea */
+  padding: 5px 10px; /* Establece el relleno interno del elemento */
+  background-color: rgba(210, 225, 4, 0.457); /* Establece el color de fondo del elemento utilizando valores RGBA */
+  border: 10px solid black; /* Establece el borde del elemento */
+  margin-left: -10px; /* Establece un margen negativo en el lado izquierdo */
+  font-style: italic; /* Establece el estilo de fuente en cursiva */
+  padding-right: 30px; /* Establece el relleno interno en el lado derecho */
+}
+.text-container {
+  flex: 100; /* Establece el tamaño flexible del elemento */
+  text-align: center; /* Alinea el texto a la izquierda */
+  background-color: rgba(6, 106, 35, 0.457); /* Establece el color de fondo utilizando valores RGBA */
+  border: 10px solid rgb(18, 17, 17); /* Establece el borde del elemento */
+  font-size: 30px; /* Establece el tamaño de la fuente */
+  
+}
+.detail-text {
+  font-size: 30px; /* Establece el tamaño de la fuente */
+  margin-bottom: 20px; /* Establece el margen inferior */
+  font-style: oblique; /* Establece el estilo de fuente en cursiva */
+  color: rgb(1, 1, 13); /* Establece el color del texto utilizando valores RGB */
+  background-color: rgba(210, 225, 4, 0.457); /* Establece el color de fondo utilizando valores RGBA */
+  border: 5px solid; /* Establece el borde del elemento */
+  ;
+}
+
+
+.circle-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items:right;
+  position: relative; 
+   right: -0%;
+   padding: 2em;
+  /* margin-right: 100px; */
+  
+   /* height: 100px;
+   width: 100px;
+   top: 50px;
+   left: 50px;
+   */
+  
+  /* border: 10px solid rgba(255, 0, 0, 0.5); */
+}
+
+.character-image {
+  width: 500px;
+  height: 500px;
+  border-radius: 500px;
+  box-shadow: 0 0 0 10px rgba(6, 106, 34, 0.853);
+  
+  
+}

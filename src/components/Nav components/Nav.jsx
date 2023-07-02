@@ -1,9 +1,10 @@
-import SearchBar from "./SearchBar";
+import SearchBar from "../search bar components/SearchBar";
 import { Link } from "react-router-dom"
+import "./Nav.css";
 
 const Nav = ({onSearch}) => {
     return (
-        <nav>
+        <nav className="nav-container">
             <SearchBar onSearch={onSearch}/>
 
             <button>
