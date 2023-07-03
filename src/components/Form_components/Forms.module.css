@@ -1,0 +1,81 @@
+/* Estilos para el contenedor del formulario */
+.formcontainer {
+    display:inline-table;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #14e541cb;
+    padding: 200px;
+    border: 10px solid #070707;
+  }
+  
+  /* Estilos para el fondo */
+  .formcontainer::before {
+    content: "";
+    background-color: red url("https://www.enjpg.com/img/2020/rick-and-morty-3.png");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5; /* Opacidad del fondo */
+    z-index: -1;
+  }
+  
+  /* Estilos para el título */
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para el campo de correo electrónico */
+  .emailfield {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .emailfieldlabel {
+    font-weight: bold;
+  }
+  
+  .emailfieldinput {
+    padding: 5px;
+  }
+  
+  /* Estilos para el campo de contraseña */
+  .passwordfield {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+  }
+  
+  .passwordfieldlabel {
+    font-weight: bold;
+  }
+  
+  .passwordfieldinput {
+    padding: 5px;
+  }
+  
+  /* Estilos para el botón de enviar */
+  .submitbutton {
+    padding: 20px 50px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Estilos para los mensajes de error */
+  .errormessage {
+    color: rgb(98, 7, 7);
+    margin-top: 10px;
+  }
+  

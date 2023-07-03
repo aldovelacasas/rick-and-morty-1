@@ -5,15 +5,19 @@ import About from './components/About components/Aboutcomponentes';
 import Detail from './components/Detail components/Detail_component';
 import { useState } from 'react'
 import axios from 'axios';
-import {Routes, Route, } from 'react-router-dom'
-import Form from './components/Form components/Form';
-import {useLocation} from "react-router-dom"
+import {Routes, Route, useLocation} from 'react-router-dom'
+import Form from './components/Form_components/Form';
+
 
 
 
 function App() {
+   
+
     const location = useLocation();
-    console.log(location);
+    
+
+
    const [characters, setCharacters] = useState([]);
 
    const onSearch=(id)=> {
@@ -35,14 +39,28 @@ function App() {
          character.id !== Number(id))
          setCharacters(charactersFiltered)
 
+
+         
+
      }
+
+
    
 
    return (
       
       
       <div className='App'>
-         <Nav onSearch={onSearch}/>
+        {
+  // Verifica si la ruta actual no es la raíz ("/")
+  location.pathname !== "/"
+  ? <Nav onSearch={onSearch}/> // Si no es la raíz, renderiza el componente Nav con la prop onSearch
+  : null // Si es la raíz, no se renderiza nada (null)
+
+  /*La condición location.pathname !== "/" verifica si la ruta actual es diferente a la raíz ("/").
+  Si la condición no se cumple (es decir, la ruta es la raíz), se renderiza null,
+   lo que indica que no se renderiza ningún contenido.*/
+}
 
          <Routes>
            <Route path='/home' element={ <Cards characters={characters}  onClose={onClose}/>} />

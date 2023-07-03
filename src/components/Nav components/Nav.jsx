@@ -6,6 +6,7 @@ const Nav = ({onSearch}) => {
     return (
         <nav className="nav-container">
             <SearchBar onSearch={onSearch}/>
+            
 
             <button>
                 <Link to= '/about'>About</Link> 
