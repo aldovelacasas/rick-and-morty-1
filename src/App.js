@@ -3,21 +3,17 @@ import Cards from './components/cards component module.css/Cards.jsx';
 import Nav from './components/Nav components/Nav';
 import About from './components/About components/Aboutcomponentes';
 import Detail from './components/Detail components/Detail_component';
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
 import axios from 'axios';
-import {Routes, Route, useLocation} from 'react-router-dom'
+import {Routes, Route, useNavigate, useLocation} from 'react-router-dom'
 import Form from './components/Form_components/Form';
 
 
 
 
 function App() {
-   
 
-    const location = useLocation();
-    
-
-
+   const ubicacion = useLocation();
    const [characters, setCharacters] = useState([]);
 
    const onSearch=(id)=> {
@@ -38,13 +34,37 @@ function App() {
       const charactersFiltered = characters.filter(character =>
          character.id !== Number(id))
          setCharacters(charactersFiltered)
+      }
 
 
+      
+          //Estado local 
+            const navigate = useNavigate ()
+            const [access, setAccess] = useState(false)
+
+         const email = "aldo251_@hotmail.com"
+         const password = "naruto251"
+   
+      
+
+ // Esta función tiene que preguntar si el email y 
+ //password que declaraste más arriba
+ //son iguales a los que les está llegando por parámetro
+ /*userData = {
+   email:"",
+   password:""
+}*/
+         const login = (userData) => {
+            if(email ===  userData.email && password === userData.password ){
+            setAccess(true);
+            navigate('/home')};
+            
          
-
-     }
-
-
+         }
+      
+         useEffect(() => {
+            !access && navigate('/');
+         }, [access]);
    
 
    return (
@@ -52,21 +72,16 @@ function App() {
       
       <div className='App'>
         {
-  // Verifica si la ruta actual no es la raíz ("/")
-  location.pathname !== "/"
-  ? <Nav onSearch={onSearch}/> // Si no es la raíz, renderiza el componente Nav con la prop onSearch
-  : null // Si es la raíz, no se renderiza nada (null)
 
-  /*La condición location.pathname !== "/" verifica si la ruta actual es diferente a la raíz ("/").
-  Si la condición no se cumple (es decir, la ruta es la raíz), se renderiza null,
-   lo que indica que no se renderiza ningún contenido.*/
+   ubicacion.pathname === "/" ?  null: <Nav onSearch={onSearch}/> 
+
 }
 
          <Routes>
            <Route path='/home' element={ <Cards characters={characters}  onClose={onClose}/>} />
            <Route path='/about' element={<About/>} />
            <Route path='/detail/:id' element={<Detail/>} />
-           <Route path="/" element={<Form/>} />
+           <Route path="/" element={<Form login={login} />} />
            
          </Routes>
      
@@ -77,6 +92,6 @@ function App() {
          
          </div>
    );
-}
+};
 
 export default App;

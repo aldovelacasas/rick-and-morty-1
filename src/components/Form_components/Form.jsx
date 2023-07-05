@@ -4,13 +4,24 @@ import validation from "../validation/validation";
 import  style from "./Forms.module.css"
 
 
-const Form = () => {
-    const [errors, setErrors] = useState({})
+
+
+
+  
+  const Form = ({ login }) => {
+  const [errors, setErrors] = useState({})
     const [userData, setUserData] = useState({
         email:"",
         password:""
     });
 
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      login(userData) 
+    }
+    
+
+   
     const handleChange = (event) => {
         setUserData({
             ...userData,
@@ -23,27 +34,30 @@ const Form = () => {
             [event.target.name]: event.target.value
 
         }))
+      }
 
-        
-
-    }
-return(
-
-  <form  className={style.formcontainer}>
+    
+return (
+  //<etiqueta>    atributo = className.  valor del atributo adentro de clasName    
+  <form  onSubmit={handleSubmit} className={style.formcontainer}>
   <label htmlFor="email" className={style.emailfield}>
     Email
-    <input placeholder="email" type="text" name="email" value={userData.email} onChange={handleChange} />
+    
+    <input placeholder="email" type="text" name="email" value={userData.email}
+     onChange={handleChange} />
   </label>
   {errors.email && <p className={style.errormessage}>{errors.email}</p>}
 
   <label htmlFor="password" className={style.passwordfield}>
     Password
-    <input placeholder="password" type="text" name="password" value={userData.password} onChange={handleChange} />
+    <input placeholder="password" type="text" name="password" value={userData.password}
+     
+     onChange={handleChange} />
   </label>
   {errors.password && <p className={style.errormessage}>{errors.password}</p>}
 
   <button className={style.submitbutton}>Login</button>
-</form>
+    </form>
 
 
   /* <form >
@@ -61,8 +75,10 @@ return(
     <button>Submit</button>
     
     
-    </form>*/
-)
-}
+  </form>*/
+
+  );
+    }
+
 
 export default Form;
