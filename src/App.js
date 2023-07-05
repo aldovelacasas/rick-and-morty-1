@@ -1,5 +1,5 @@
 import './App.css';
-import Cards from './components/cards component module.css/Cards.jsx';
+import Cards from './components/cards.component.module/Cards.jsx';
 import Nav from './components/Nav components/Nav';
 import About from './components/About components/Aboutcomponentes';
 import Detail from './components/Detail components/Detail_component';
@@ -7,7 +7,7 @@ import { useState, useEffect} from 'react'
 import axios from 'axios';
 import {Routes, Route, useNavigate, useLocation} from 'react-router-dom'
 import Form from './components/Form_components/Form';
-
+import Favorites from './components/favorites/favorites';
 
 
 
@@ -25,7 +25,9 @@ function App() {
             window.alert('¡No hay personajes con este ID!');
          }
          
-      });/*.catch(error=>alert("No se encontró el ID!!!"));*/             ;
+      }).catch((error) => {
+         alert('No se encontró el ID!!!');
+       });  /*.catch(error => alert("No se encontró el ID!!!"));*/
    }
 
       //tambien se puede con concat :
@@ -82,7 +84,7 @@ function App() {
            <Route path='/about' element={<About/>} />
            <Route path='/detail/:id' element={<Detail/>} />
            <Route path="/" element={<Form login={login} />} />
-           
+           <Route path='/favorites' element={<Favorites/>} />
          </Routes>
      
          
