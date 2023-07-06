@@ -8,7 +8,7 @@ import axios from 'axios';
 import {Routes, Route, useNavigate, useLocation} from 'react-router-dom'
 import Form from './components/Form_components/Form';
 import Favorites from './components/favorites/favorites';
-
+import { removeFav } from './components/redux/actions';
 
 
 function App() {
@@ -36,6 +36,7 @@ function App() {
       const charactersFiltered = characters.filter(character =>
          character.id !== Number(id))
          setCharacters(charactersFiltered)
+         removeFav(id)
       }
 
 

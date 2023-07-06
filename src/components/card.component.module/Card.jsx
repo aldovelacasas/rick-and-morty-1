@@ -16,7 +16,7 @@ function Card({id ,name, status, species, gender, origin, image, onClose, addFav
     }
     else{
       setIsFav(true);
-      addFav(id ,name, status, species, gender, origin, image, onClose)
+      addFav({id ,name, status, species, gender, origin, image, onClose})
     }
   }
   useEffect(() => {
@@ -70,8 +70,8 @@ function Card({id ,name, status, species, gender, origin, image, onClose, addFav
    const mapDispatchToProps = (dispatch) =>{
     return{
       addFav:(character) => {dispatch(addFav(character))},
+      
       removeFav:(id) => {dispatch(removeFav(id))}
-  
     }
   };
 
