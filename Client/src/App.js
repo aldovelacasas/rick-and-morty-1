@@ -16,57 +16,52 @@ function App() {
    const ubicacion = useLocation();
    const [characters, setCharacters] = useState([]);
 
-   const onSearch=(id)=> {
-      axios(`http://localhost:3001/rickandmorty/character/${id}`)
-      .then(({ data }) => {
+   async function onSearch (id) {
+      try {
+         const {data} = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
+
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
          } else {
-            window.alert('¡No hay personajes con este ID!');
-         }
+            alert('¡No hay personajes con este ID!');
+          }
          
-      }).catch((error) => {
-         alert('No se encontró el ID!!!');
-       });  /*.catch(error => alert("No se encontró el ID!!!"));*/
-   }
+      } catch (error) {
+         console.log(error);
+      }   
+     }
 
-      //tambien se puede con concat :
-      // setCharacters(characters.concat(example));
+      
      const onClose = (id) => {
-      const charactersFiltered = characters.filter(character => character.id !== Number(id))
+      const charactersFiltered = characters.filter(character =>
+         character.id !== Number(id))
          setCharacters(charactersFiltered)
          removeFav(id)
       }
 
 
       
-          //Estado local 
+          
             const navigate = useNavigate ()
             const [access, setAccess] = useState(false)
 
-         // const email = "aldo251_@hotmail.com"
-         // const password = "naruto251"
-   
-      
-
- // Esta función tiene que preguntar si el email y 
- //password que declaraste más arriba
- //son iguales a los que les está llegando por parámetro
- /*userData = {
-   email:"",
-   password:""
-}*/
             
          
-   const login = (userData) => {
-   const { email, password } = userData;
-   const URL = 'http://localhost:3001/rickandmorty/login/';
-   axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-      const { access } = data;
-      setAccess(data);
-      access && navigate('/home');
-   });
-}
+   const login = async (userData) => {
+      try {
+        const { email, password } = userData;
+        const URL = 'http://localhost:3001/rickandmorty/login/';
+        const {data} = await axios(URL + `?email=${email}&password=${password}`)
+        const { access } = data;
+        setAccess(data);
+        access && navigate('/home');
+      
+     } catch (error) {
+      console.log(error.message)
+      
+     }
+   }
+
       
          useEffect(() => {
             !access && navigate('/');
@@ -88,8 +83,7 @@ function App() {
            <Route path='/about' element={<About/>} />
            <Route path='/detail/:id' element={<Detail/>} />
            <Route path="/" element={<Form login={login} />} />
-           <Route path='/favorites' element={<Favorites onClose={onClose} />} />
-
+           <Route path='/favorites' element={<Favorites/>} />
          </Routes>
      
          

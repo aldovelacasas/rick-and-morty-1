@@ -14,7 +14,7 @@ const deleteFav = (request, response) => {
     let {id} = request.params;
 
      myFavorites = myFavorites.filter((favorite) => 
-    favorite.id !== id);
+    favorite.id !== +id);
 
     return response.status(200).send(myFavorites)
 }
